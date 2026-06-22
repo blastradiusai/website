@@ -1,65 +1,128 @@
-import Image from "next/image";
+const signals = [
+  "Analyzing PR changes",
+  "Checking dependencies",
+  "Reviewing Terraform risk",
+  "Scanning Kubernetes configs",
+  "Learning from past incidents",
+  "Generating remediation plan",
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen overflow-hidden bg-[#050816] text-white">
+      <section className="relative mx-auto max-w-7xl px-6 py-24 text-center">
+        <div className="absolute left-1/2 top-24 h-96 w-96 -translate-x-1/2 rounded-full bg-orange-500/20 blur-3xl" />
+
+        <div className="relative">
+          <div className="inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm font-medium text-orange-400">
+            BlastRadius AI · Self-Learning Change Intelligence
+          </div>
+
+          <h1 className="mt-8 text-5xl font-bold tracking-tight md:text-7xl">
+            The AI Engineer That
+            <br />
+            <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+              Prevents Production Incidents
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          <p className="mx-auto mt-8 max-w-4xl text-xl leading-8 text-slate-300">
+            BlastRadius AI learns from every code change, deployment,
+            vulnerability, infrastructure update, and incident to predict risk,
+            reduce manual remediation, and stop failures before they reach
+            production.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="mailto:krishna@blastradiusai.com"
+              className="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Request Early Access
+            </a>
+
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#ai-brain"
+              className="rounded-xl border border-slate-700 px-8 py-4 font-semibold text-slate-200 hover:border-orange-500"
             >
-              Learning
-            </a>{" "}
-            center.
+              See How It Thinks
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="ai-brain" className="mx-auto max-w-6xl px-6 pb-24">
+        <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8 shadow-2xl">
+          <div className="mb-6 flex items-center justify-between border-b border-slate-800 pb-4">
+            <div>
+              <p className="text-sm text-slate-400">Live AI Analysis</p>
+              <h2 className="text-2xl font-bold">GitHub PR #2487</h2>
+            </div>
+            <div className="rounded-full bg-orange-500/10 px-4 py-2 text-sm text-orange-400">
+              Risk Score: 82
+            </div>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-3">
+              {signals.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-xl border border-slate-800 bg-slate-950 p-4 text-left text-slate-300"
+                >
+                  <span className="mr-2 text-orange-400">●</span>
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-2xl border border-orange-500/20 bg-slate-950 p-6 text-left">
+              <p className="text-sm text-slate-400">BlastRadius Decision</p>
+              <h3 className="mt-3 text-3xl font-bold text-orange-400">
+                Manual Review Required
+              </h3>
+
+              <div className="mt-6 space-y-4 text-slate-300">
+                <p>⚠ Terraform network rule modified</p>
+                <p>⚠ Similar change caused prior incident</p>
+                <p>✅ Dependency vulnerabilities remediated</p>
+                <p>✅ Suggested rollback path generated</p>
+              </div>
+
+              <div className="mt-8 rounded-xl bg-orange-500/10 p-4 text-orange-300">
+                AI Recommendation: hold production deployment until security
+                group change is reviewed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-24 md:grid-cols-3">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-8">
+          <h3 className="text-2xl font-semibold text-orange-400">Learn</h3>
+          <p className="mt-4 text-slate-400">
+            Continuously learns from code history, deployments, vulnerabilities,
+            incidents, and remediation outcomes.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-8">
+          <h3 className="text-2xl font-semibold text-orange-400">Predict</h3>
+          <p className="mt-4 text-slate-400">
+            Predicts outage, security, compliance, and infrastructure risk
+            before production deployment.
+          </p>
         </div>
-      </main>
-    </div>
+
+        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-8">
+          <h3 className="text-2xl font-semibold text-orange-400">Prevent</h3>
+          <p className="mt-4 text-slate-400">
+            Recommends validated fixes, blocks risky changes, and reduces
+            repetitive manual remediation work.
+          </p>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
         <a
-          href="mailto:krishna@blastradiusai.com"
+          href="mailto:info@blastradiusai.com"
           className="rounded-xl bg-orange-500 px-5 py-3 text-sm font-semibold shadow-lg shadow-orange-500/30 hover:bg-orange-600"
         >
           Request Early Access
@@ -71,7 +71,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href="mailto:krishna@blastradiusai.com"
+              href="mailto:info@blastradiusai.com"
               className="rounded-xl bg-orange-500 px-8 py-4 text-center font-semibold shadow-xl shadow-orange-500/30 hover:bg-orange-600"
             >
               Request Early Access
@@ -258,7 +258,7 @@ export default function Home() {
           </div>
 
           <a
-            href="mailto:krishna@blastradiusai.com"
+            href="mailto:info@blastradiusai.com"
             className="mt-8 inline-block rounded-xl bg-orange-500 px-8 py-4 font-semibold shadow-xl shadow-orange-500/30 hover:bg-orange-600 md:mt-0"
           >
             Request Early Access

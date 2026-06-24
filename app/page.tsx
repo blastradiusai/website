@@ -47,6 +47,12 @@ export default function Home() {
               See How It Works
             </a>
           </div>
+
+          <img
+            src="/blastradius-preview.png"
+            alt="BlastRadius AI product preview"
+            className="mx-auto mt-16 rounded-3xl border border-orange-500/20 shadow-2xl shadow-orange-500/20"
+          />
         </div>
       </section>
 

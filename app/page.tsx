@@ -31,6 +31,8 @@ export default function Home() {
           />
         </div>
 
+        
+
         <div className="hidden gap-8 text-sm text-slate-300 md:flex">
           <a href="#product">Product</a>
           <a href="#how">How It Works</a>

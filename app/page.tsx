@@ -17,14 +17,35 @@ const stack = [
   "Runtime Logs",
 ];
 
+const CONTACT_EMAIL = "info@blastradiusai.com";
+
+function LogoMark() {
+  return (
+    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 shadow-lg shadow-orange-500/30">
+      <svg
+        viewBox="0 0 64 64"
+        className="h-8 w-8 text-white"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M32 4L54 13V29C54 43 45 55 32 60C19 55 10 43 10 29V13L32 4Z"
+          stroke="currentColor"
+          strokeWidth="5"
+          strokeLinejoin="round"
+        />
+        <path d="M36 16L22 34H33L28 48L43 28H32L36 16Z" fill="currentColor" />
+      </svg>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#050816] text-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500 text-xl font-bold">
-            ⚡
-          </div>
+          <LogoMark />
           <div>
             <div className="text-lg font-bold">BlastRadius AI</div>
             <div className="text-xs text-slate-400">
@@ -40,7 +61,7 @@ export default function Home() {
         </div>
 
         <a
-          href="mailto:info@blastradiusai.com"
+          href={`mailto:${CONTACT_EMAIL}`}
           className="rounded-xl bg-orange-500 px-5 py-3 text-sm font-semibold shadow-lg shadow-orange-500/30 hover:bg-orange-600"
         >
           Request Early Access
@@ -71,7 +92,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href="mailto:info@blastradiusai.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="rounded-xl bg-orange-500 px-8 py-4 text-center font-semibold shadow-xl shadow-orange-500/30 hover:bg-orange-600"
             >
               Request Early Access
@@ -171,11 +192,27 @@ export default function Home() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-5">
           {[
-            ["1", "Ingest", "Reads code, IaC, configs, dependencies, and runtime signals."],
-            ["2", "Understand", "Builds context across systems, ownership, history, and risk."],
-            ["3", "Predict", "Calculates risk and blast radius before deployment."],
+            [
+              "1",
+              "Ingest",
+              "Reads code, IaC, configs, dependencies, and runtime signals.",
+            ],
+            [
+              "2",
+              "Understand",
+              "Builds context across systems, ownership, history, and risk.",
+            ],
+            [
+              "3",
+              "Predict",
+              "Calculates risk and blast radius before deployment.",
+            ],
             ["4", "Remediate", "Generates and validates fixes automatically."],
-            ["5", "Prevent", "Stops preventable incidents before production impact."],
+            [
+              "5",
+              "Prevent",
+              "Stops preventable incidents before production impact.",
+            ],
           ].map(([num, title, text]) => (
             <div
               key={title}
@@ -210,7 +247,9 @@ export default function Home() {
           </div>
 
           <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-orange-500/30 bg-orange-500/10 p-6 text-center">
-            <div className="text-3xl">⚡</div>
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-orange-500">
+              <LogoMark />
+            </div>
             <h3 className="mt-3 text-2xl font-bold">BlastRadius AI</h3>
             <p className="mt-2 text-orange-300">
               Preventive Engineering Intelligence
@@ -258,7 +297,7 @@ export default function Home() {
           </div>
 
           <a
-            href="mailto:info@blastradiusai.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="mt-8 inline-block rounded-xl bg-orange-500 px-8 py-4 font-semibold shadow-xl shadow-orange-500/30 hover:bg-orange-600 md:mt-0"
           >
             Request Early Access

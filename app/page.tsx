@@ -27,7 +27,7 @@ export default function Home() {
           <img
             src="/BlastRadius-logo.png"
             alt="BlastRadius AI"
-            className="h-16 w-auto"
+            className="h-32 w-auto"
           />
         </div>
 

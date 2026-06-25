@@ -19,39 +19,16 @@ const stack = [
 
 const CONTACT_EMAIL = "info@blastradiusai.com";
 
-function LogoMark() {
-  return (
-    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 shadow-lg shadow-orange-500/30">
-      <svg
-        viewBox="0 0 64 64"
-        className="h-8 w-8 text-white"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M32 4L54 13V29C54 43 45 55 32 60C19 55 10 43 10 29V13L32 4Z"
-          stroke="currentColor"
-          strokeWidth="5"
-          strokeLinejoin="round"
-        />
-        <path d="M36 16L22 34H33L28 48L43 28H32L36 16Z" fill="currentColor" />
-      </svg>
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#050816] text-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <div className="flex items-center gap-3">
-          <LogoMark />
-          <div>
-            <div className="text-lg font-bold">BlastRadius AI</div>
-            <div className="text-xs text-slate-400">
-              Preventive Engineering Intelligence
-            </div>
-          </div>
+        <div className="flex items-center">
+          <img
+            src="/BlastRadius-logo.png"
+            alt="BlastRadius AI"
+            className="h-16 w-auto"
+          />
         </div>
 
         <div className="hidden gap-8 text-sm text-slate-300 md:flex">
@@ -73,7 +50,7 @@ export default function Home() {
 
         <div className="relative">
           <div className="inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm font-medium text-orange-400">
-            New Category · Preventive Engineering Intelligence
+            Preventive Engineering Intelligence
           </div>
 
           <h1 className="mt-8 text-5xl font-bold tracking-tight md:text-7xl">
@@ -247,18 +224,19 @@ export default function Home() {
           </div>
 
           <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-orange-500/30 bg-orange-500/10 p-6 text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-orange-500">
-              <LogoMark />
-            </div>
-            <h3 className="mt-3 text-2xl font-bold">BlastRadius AI</h3>
-            <p className="mt-2 text-orange-300">
-              Preventive Engineering Intelligence
-            </p>
+            <img
+              src="/BlastRadius-logo.png"
+              alt="BlastRadius AI"
+              className="mx-auto h-20 w-auto"
+            />
           </div>
         </div>
       </section>
 
-      <section id="why" className="mx-auto grid max-w-7xl gap-6 px-6 py-20 md:grid-cols-2">
+      <section
+        id="why"
+        className="mx-auto grid max-w-7xl gap-6 px-6 py-20 md:grid-cols-2"
+      >
         <div className="rounded-3xl border border-red-500/20 bg-red-500/5 p-8">
           <h3 className="text-2xl font-bold">Traditional Tools</h3>
           <div className="mt-6 space-y-4 text-slate-400">
@@ -326,8 +304,8 @@ function Node({
           green
             ? "text-green-400"
             : danger
-            ? "text-orange-400"
-            : "text-violet-400"
+              ? "text-orange-400"
+              : "text-violet-400"
         }
       >
         ● {label}

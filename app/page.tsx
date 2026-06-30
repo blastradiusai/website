@@ -1,17 +1,18 @@
 const CONTACT_EMAIL = "info@blastradiusai.com";
+const APP_URL = "https://app.blastradiusai.com";
 
 const metrics = [
   ["120", "Risk Score"],
   ["98%", "Confidence"],
-  ["45 min", "Time Saved"],
-  ["1", "Fix Plan Ready"],
+  ["7 min", "EDT"],
+  ["45 min", "EES"],
 ];
 
 const flow = [
-  ["GitHub PR", "Developer opens a change request."],
-  ["Evidence", "Checkov, Trivy, Terraform, Kubernetes, and scanner findings."],
-  ["Context", "Production, Tier-1 service, ownership, incidents, blast radius."],
-  ["Decision", "Block merge, explain why, and generate remediation."],
+  ["Engineering Evidence", "GitHub PRs, Terraform, Kubernetes, scanners, and cloud context."],
+  ["Engineering Context", "Production tier, ownership, service criticality, incidents, and blast radius."],
+  ["Engineering Reasoning", "AI explains impact, prioritizes risk, and recommends the safest action."],
+  ["Engineering Decision", "One trusted decision with remediation before risky changes reach production."],
 ];
 
 export default function Home() {
@@ -21,20 +22,28 @@ export default function Home() {
         <img
           src="/BlastRadius-logo.png"
           alt="BlastRadius AI"
-          className="h-30 w-auto"
+          className="h-24 w-auto"
         />
 
         <div className="hidden gap-8 text-sm text-slate-300 md:flex">
-          <a href="#product">Product</a>
-          <a href="#how">How It Works</a>
-          <a href="#why">Why BlastRadius</a>
+          <a href="#product" className="hover:text-white">Product</a>
+          <a href="#how" className="hover:text-white">How It Works</a>
+          <a href="#why" className="hover:text-white">Why BlastRadius</a>
+          <a
+            href={`mailto:${CONTACT_EMAIL}?subject=BlastRadius AI Enterprise Demo`}
+            className="hover:text-white"
+          >
+            Contact
+          </a>
         </div>
 
         <a
-          href={`mailto:${CONTACT_EMAIL}`}
+          href={APP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-xl bg-orange-500 px-5 py-3 text-sm font-semibold shadow-lg shadow-orange-500/30 hover:bg-orange-600"
         >
-          Request Early Access
+          Launch App →
         </a>
       </nav>
 
@@ -47,41 +56,50 @@ export default function Home() {
           </div>
 
           <h1 className="mt-8 text-5xl font-bold tracking-tight md:text-7xl">
-            Prevent Risk
-            <br />
-            <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-              Before It Exists.
-            </span>
+            Engineering Decision Intelligence
           </h1>
 
-          <p className="mt-8 max-w-2xl text-xl leading-8 text-slate-300">
+          <p className="mt-6 max-w-3xl text-2xl font-light leading-9 text-slate-300">
+            AI-powered engineering decisions built from code changes,
+            infrastructure context, security evidence, deployment history,
+            and automated reasoning.
+          </p>
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
             BlastRadius AI transforms engineering evidence into trusted
-            decisions. It analyzes code, infrastructure, cloud context,
-            vulnerabilities, and deployments to explain risk, generate
-            remediation, and prevent production incidents before merge.
+            engineering decisions. Instead of overwhelming developers with
+            scanner results, BlastRadius understands engineering context,
+            explains risk, calculates blast radius, and recommends the safest
+            path forward before changes reach production.
+          </p>
+
+          <p className="mt-5 text-xl font-semibold text-orange-400">
+            Prevent Risk Before It Exists.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="rounded-xl bg-orange-500 px-8 py-4 text-center font-semibold shadow-xl shadow-orange-500/30 hover:bg-orange-600"
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-orange-500 px-8 py-4 text-center font-semibold shadow-xl shadow-orange-500/30 hover:bg-orange-600 transition-all hover:scale-105"
             >
-              Request Early Access
+              Launch App →
             </a>
 
             <a
-              href="#product"
-              className="rounded-xl border border-slate-700 px-8 py-4 text-center font-semibold text-slate-200 hover:border-orange-500"
+              href={`mailto:${CONTACT_EMAIL}?subject=BlastRadius AI Enterprise Demo`}
+              className="rounded-xl border border-slate-700 px-8 py-4 text-center font-semibold text-slate-200 hover:border-orange-500 hover:bg-slate-900 transition-all"
             >
-              See Decision Engine
+              Talk to Sales
             </a>
           </div>
 
           <div className="mt-10 flex flex-wrap gap-4 text-sm text-slate-400">
-            <span>✓ GitHub PR intelligence</span>
-            <span>✓ Terraform risk context</span>
-            <span>✓ Vulnerability evidence</span>
-            <span>✓ Remediation planning</span>
+            <span>✓ Engineering Decisions</span>
+            <span>✓ AI-Powered Risk Reasoning</span>
+            <span>✓ Blast Radius Analysis</span>
+            <span>✓ Autonomous Remediation</span>
           </div>
         </div>
 
@@ -91,7 +109,7 @@ export default function Home() {
         >
           <div className="mb-6 border-b border-slate-800 pb-5">
             <p className="text-xs uppercase tracking-widest text-orange-400">
-              BlastRadius AI Decision Report
+              BlastRadius AI Decision Card
             </p>
             <h2 className="mt-2 text-2xl font-bold">db-control-plane PR</h2>
             <p className="text-sm text-slate-400">
@@ -151,7 +169,7 @@ export default function Home() {
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-400">
             BlastRadius does not replace your scanners. It uses them as
-            evidence, adds engineering context, and produces one trusted
+            engineering evidence, adds context, and produces one trusted
             decision with a remediation path.
           </p>
         </div>
@@ -236,14 +254,37 @@ export default function Home() {
             </p>
           </div>
 
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="mt-8 inline-block rounded-xl bg-orange-500 px-8 py-4 font-semibold shadow-xl shadow-orange-500/30 hover:bg-orange-600 md:mt-0"
-          >
-            Request Early Access
-          </a>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row md:mt-0">
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-xl bg-orange-500 px-8 py-4 font-semibold shadow-xl shadow-orange-500/30 hover:bg-orange-600"
+            >
+              Launch App →
+            </a>
+
+            <a
+              href={`mailto:${CONTACT_EMAIL}?subject=BlastRadius AI Enterprise Demo`}
+              className="inline-block rounded-xl border border-slate-700 px-8 py-4 font-semibold text-slate-200 hover:border-orange-500"
+            >
+              Talk to Sales
+            </a>
+          </div>
         </div>
       </section>
+
+      <footer className="mx-auto max-w-7xl px-6 py-10 text-sm text-slate-500">
+        <div className="flex flex-col justify-between gap-4 border-t border-slate-800 pt-8 md:flex-row">
+          <p>© 2026 BlastRadius AI. Engineering Decision Intelligence.</p>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="text-slate-400 hover:text-orange-400"
+          >
+            {CONTACT_EMAIL}
+          </a>
+        </div>
+      </footer>
     </main>
   );
 }

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "BlastRadius AI | Prevent Risk Before It Exists",
   description:
-    "Preventive Engineering Intelligence that predicts risk, automates remediation, and prevents production incidents before they happen.",
+    "Engineering Decision Intelligence that predicts risk, automates remediation, and prevents production incidents before they happen.",
   openGraph: {
     title: "BlastRadius AI",
     description: "Prevent Risk Before It Exists.",
